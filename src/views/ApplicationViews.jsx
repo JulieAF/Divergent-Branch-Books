@@ -7,6 +7,7 @@ import { ReviewList } from "../pages/ReviewList";
 import BookList from "../pages/BookList";
 import { BookForm } from "../components/forms/BookForm";
 import { BookDetails } from "../pages/BookDetails";
+import { EditBookForm } from "../components/forms/EditBookForm";
 
 export const ApplicationViews = ({ token, setToken }) => {
   return (
@@ -19,8 +20,12 @@ export const ApplicationViews = ({ token, setToken }) => {
           <Route path="/" element={<BookList setToken={setToken} />} />
         </Route>
         <Route
-          path="/bookLists/:bookId"
+          path="/bookList/:bookId"
           element={<BookDetails token={token} setToken={setToken} />}
+        />
+        <Route
+          path="/bookList/:bookId/edit-book"
+          element={<EditBookForm token={token} setToken={setToken} />}
         />
         <Route
           path="/create-book"

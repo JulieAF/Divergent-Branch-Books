@@ -43,7 +43,17 @@ export const BookDetails = () => {
           <p>No book found.</p>
         )}
       </div>
-      {book?.is_owner ? <div className="manage-tags-div"></div> : ""}
+      {book?.is_owner ? (
+        <div className="manage-edit-div">
+          <div className="manage-books-div">
+            <button onClick={() => navigate(`/bookList/${book.id}/edit-book`)}>
+              Edit
+            </button>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
       <div className="review-buttons" key={`viewReviews${bookId}`}>
         <button
           className="view-review-button"
