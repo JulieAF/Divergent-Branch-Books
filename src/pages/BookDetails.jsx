@@ -57,7 +57,7 @@ export const BookDetails = () => {
       <div className="review-buttons" key={`viewReviews${bookId}`}>
         <button
           className="view-review-button"
-          onClick={() => navigate(`/bookList/${bookId}/reviewList`)}
+          onClick={() => navigate(`/bookList/${bookId}/review`)}
         >
           View Reviews
         </button>
