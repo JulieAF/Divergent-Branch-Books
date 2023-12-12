@@ -45,13 +45,20 @@ export const Review = () => {
         ) : (
           reviews.map((review) => {
             return (
-              <div className="card-item" key={review.id}>
-                <div>
-                  <h3>{review.content}</h3>
-                  <h3>Author: {review.alien_user?.user?.username}</h3>
-                  <h3>{review.created_on}</h3>
+              <Link
+                style={{ textDecoration: "none", color: "rgb(79, 17, 146)" }}
+                book={review}
+                key={review.id}
+                to={`/bookList/${book.id}/review/${review.id}`}
+              >
+                <div className="card-item" key={review.id}>
+                  <div>
+                    <h3>{review.content}</h3>
+                    <h3>Author: {review.alien_user?.user?.username}</h3>
+                    <h3>{review.created_on}</h3>
+                  </div>
                 </div>
-              </div>
+              </Link>
             );
           })
         )}
