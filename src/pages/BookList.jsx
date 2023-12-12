@@ -58,7 +58,7 @@ function BookList() {
         {books && books.length ? (
           genreFilteredBooks.map((book) => (
             <div className="card-item" key={book.id}>
-              <Link to={`/bookLists/${book.id}`}>
+              <Link to={`/bookList/${book.id}`}>
                 <div className="book-details">
                   <div className="book-header">
                     <img

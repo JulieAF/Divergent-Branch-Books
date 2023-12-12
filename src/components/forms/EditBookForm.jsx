@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { getAllGenres } from "../../services/genreServices";
+import { useNavigate, useParams } from "react-router-dom";
 import "./forms.css";
+import { getBookByBookId, editBook } from "../../services/bookServices";
+import { getAllGenres } from "../../services/genreServices";
 
-export const BookForm = () => {
+export const EditBookForm = () => {
   const [genreLabel, setGenreLabel] = useState([]);
+  const { bookId } = useParams();
+  let navigate = useNavigate();
   const [book, setBook] = useState({
     title: "",
     author: "",
@@ -16,13 +19,17 @@ export const BookForm = () => {
     genre: 0,
   });
 
-  let navigate = useNavigate();
-
   useEffect(() => {
     getAllGenres().then((genreArray) => {
       setGenreLabel(genreArray);
     });
   }, []);
+
+  useEffect(() => {
+    getBookByBookId(bookId).then((bookObj) => {
+      setBook(bookObj);
+    });
+  }, [bookId]);
 
   const updateBook = (e) => {
     const copy = { ...book };
@@ -32,54 +39,38 @@ export const BookForm = () => {
 
   const updateGenre = (e) => {
     const copy = { ...book };
-    copy.genre = e.target.value;
+    copy.genre.id = e.target.value;
     setBook(copy);
   };
 
-  const postBook = async (evt) => {
-    evt.preventDefault();
+  const handleCancel = () => {
+    navigate(`/bookList/${bookId}`);
+  };
 
-    // Retrieve the token from localStorage
-    const authToken = localStorage.getItem("auth_token");
+  const handleSave = (event) => {
+    event.preventDefault();
 
-    // Check if the token is present
-    if (!authToken) {
-      console.error("Token not found in localStorage");
-      return;
-    }
+    const updatedItem = {
+      id: book.id,
+      title: book.title,
+      author: book.author,
+      publication_date: book.publication_date,
+      page_count: book.page_count,
+      image_url: book.image_url,
+      content: book.content,
+      genre: book.genre.id,
+    };
 
-    try {
-      // Send a POST request to create a new book
-      const response = await fetch("http://localhost:8000/books", {
-        method: "POST",
-        headers: {
-          Authorization: `Token ${localStorage.getItem("auth_token")}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ ...book }),
-      });
-
-      if (!response.ok) {
-        console.error("Error posting book:", response.statusText);
-        return;
-      }
-
-      // Parse the response to get the newly created book's ID
-      const createdBook = await response.json();
-      const bookId = createdBook.id;
-
-      // Navigate to the detail page of the created book
+    editBook(updatedItem).then(() => {
       navigate(`/bookList/${bookId}`);
-    } catch (error) {
-      console.error("Error posting book:", error);
-    }
+    });
   };
 
   return (
     <main className="form-parent">
       <form className="form-and-header">
         <div className="h1-div">
-          <h1>New Book Form</h1>
+          <h1>Edit Book Form</h1>
         </div>
         <div className="form-container">
           <fieldset className="form-fieldset">
@@ -138,7 +129,7 @@ export const BookForm = () => {
                 id="image_url"
                 onChange={updateBook}
                 type="text"
-                placeholder="https://example.com"
+                placeholder=""
                 value={book.image_url}
                 required
               />
@@ -163,9 +154,9 @@ export const BookForm = () => {
                   className="input"
                   name="genre"
                   onChange={updateGenre}
-                  value={book.genre}
+                  value={book.genre.id}
                 >
-                  <option value={0}>Please select a Genre</option>
+                  {/* <option value={0}>Please select a Genre</option> */}
                   {genreLabel.map((typeObj) => {
                     return (
                       <option key={typeObj.id} value={typeObj.id}>
@@ -179,10 +170,10 @@ export const BookForm = () => {
           </fieldset>
         </div>
         <div className="button-div">
-          <button className="cancel-button" onClick={postBook}>
-            Add Book
+          <button className="cancel-button" onClick={handleSave}>
+            Save
           </button>
-          <button className="cancel-button" onClick={() => navigate(-1)}>
+          <button className="cancel-button" onClick={handleCancel}>
             Cancel
           </button>
         </div>
