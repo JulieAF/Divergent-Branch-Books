@@ -8,6 +8,8 @@ import BookList from "../pages/BookList";
 import { BookForm } from "../components/forms/BookForm";
 import { BookDetails } from "../pages/BookDetails";
 import { EditBookForm } from "../components/forms/EditBookForm";
+import { Review } from "../pages/Review";
+import { ReviewForm } from "../components/forms/ReviewForm";
 
 export const ApplicationViews = ({ token, setToken }) => {
   return (
@@ -30,6 +32,14 @@ export const ApplicationViews = ({ token, setToken }) => {
         <Route
           path="/create-book"
           element={<BookForm token={token} setToken={setToken} />}
+        />
+        <Route
+          path="/bookList/:bookId/review"
+          element={<Review token={token} setToken={setToken} />}
+        />
+        <Route
+          path="/create-review/:bookId"
+          element={<ReviewForm token={token} setToken={setToken} />}
         />
         <Route
           path="/reviews"
