@@ -24,11 +24,11 @@ export const ApplicationViews = ({ token, setToken }) => {
           <Route path="/" element={<BookList setToken={setToken} />} />
         </Route>
         <Route
-          path="/bookList/:bookId"
+          path="/book/:bookId"
           element={<BookDetails token={token} setToken={setToken} />}
         />
         <Route
-          path="/bookList/:bookId/edit-book"
+          path="/book/:bookId/edit-book"
           element={<EditBookForm token={token} setToken={setToken} />}
         />
         <Route
@@ -36,20 +36,20 @@ export const ApplicationViews = ({ token, setToken }) => {
           element={<BookForm token={token} setToken={setToken} />}
         />
         <Route
-          path="/bookList/:bookId/reviews"
+          path="/book/:bookId/reviews"
           element={<Review token={token} setToken={setToken} />}
         />
         <Route
-          path="/bookList/:bookId/review/:reviewId"
+          path="/create-review/:bookId"
+          element={<ReviewForm token={token} setToken={setToken} />}
+        />
+        <Route
+          path="/review/:reviewId"
           element={<ReviewDetails token={token} setToken={setToken} />}
         />
         <Route
           path="/review/:reviewId/edit-review"
           element={<EditReviewForm token={token} setToken={setToken} />}
-        />
-        <Route
-          path="/create-review/:bookId"
-          element={<ReviewForm token={token} setToken={setToken} />}
         />
         <Route
           path="/reviews"

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { getBookByBookId } from "../services/bookServices";
+import { deleteBook, getBookByBookId } from "../services/bookServices";
 
 export const BookDetails = () => {
   const { bookId } = useParams();
@@ -8,13 +8,26 @@ export const BookDetails = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    getBookByBookId(bookId).then(
-      (book) => {
-        setBook(book);
-      },
-      [bookId]
+    getBookByBookId(bookId).then((book) => {
+      setBook(book);
+    });
+  }, [bookId]);
+
+  const handleDelete = (bookId) => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this book?"
     );
-  });
+    if (confirmDelete) {
+      deleteBook(bookId, () => {
+        // Filter out the deleted book from the books list
+        const updatedBook = book.filter((book) => book.id !== bookId);
+        setBook(updatedBook);
+      }).catch((error) => {
+        // Handle error, if any, during deletion
+        console.error("Error deleting book:", error);
+      });
+    }
+  };
 
   return (
     <>
@@ -46,18 +59,29 @@ export const BookDetails = () => {
       {book?.is_owner ? (
         <div className="manage-edit-div">
           <div className="manage-books-div">
-            <button onClick={() => navigate(`/bookList/${book.id}/edit-book`)}>
+            <button onClick={() => navigate(`/book/${book.id}/edit-book`)}>
               Edit
+            </button>
+          </div>
+          <div className="comment-buttons">
+            <button
+              className="delete-button"
+              onClick={() => {
+                handleDelete(book.id);
+                navigate("/");
+              }}
+            >
+              Delete
             </button>
           </div>
         </div>
       ) : (
         ""
       )}
-      <div className="review-buttons" key={`viewReviews${bookId}`}>
+      <div className="review-buttons" key={`/book/${bookId}/reviews`}>
         <button
           className="view-review-button"
-          onClick={() => navigate(`/bookList/${bookId}/reviews`)}
+          onClick={() => navigate(`/book/${bookId}/reviews`)}
         >
           View Reviews
         </button>

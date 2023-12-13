@@ -9,7 +9,7 @@ export const ReviewForm = () => {
     content: "",
     created_on: new Date(),
   });
-
+  const [contentError, setContentError] = useState(false);
   let navigate = useNavigate();
 
   const updateReview = (e) => {
@@ -21,13 +21,18 @@ export const ReviewForm = () => {
   const handleSave = (evt) => {
     evt.preventDefault();
 
+    if (!review.content) {
+      setContentError(true);
+      return;
+    }
+
     const newReview = {
       book: review.book,
       content: review.content,
       created_on: review.created_on,
     };
     createReviews(newReview).then(() => {
-      navigate(`/bookList/${review.book}/review`);
+      navigate(`/book/${review.book}/reviews`);
     });
   };
 
@@ -51,6 +56,7 @@ export const ReviewForm = () => {
                 required
               />
             </div>
+            {contentError && <p>Please fill out the content field.</p>}
           </fieldset>
           <div className="button-div">
             <button className="cancel-button" onClick={handleSave}>
