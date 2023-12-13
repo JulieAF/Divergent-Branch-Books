@@ -45,6 +45,7 @@ export const deleteReview = (reviewId) => {
     method: "DELETE",
     headers: {
       Authorization: `Token ${localStorage.getItem("auth_token")}`,
+      "Content-Type": "application/json",
     },
   });
 };

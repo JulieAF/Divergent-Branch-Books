@@ -15,7 +15,13 @@ export const BookForm = () => {
     created_on: "new Date()",
     genre: 0,
   });
-
+  const [titleError, setTitleError] = useState(false);
+  const [authorError, setAuthorError] = useState(false);
+  const [publicationDateError, setPublicationDateError] = useState(false);
+  const [pageCountError, setPageCountError] = useState(false);
+  const [imageUrlError, setImageUrlError] = useState(false);
+  const [contentError, setContentError] = useState(false);
+  const [genreError, setGenreError] = useState(false);
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -38,6 +44,42 @@ export const BookForm = () => {
 
   const postBook = async (evt) => {
     evt.preventDefault();
+    if (!book.title) {
+      setTitleError(true);
+      return;
+    }
+
+    if (!book.author) {
+      setAuthorError(true);
+      return;
+    }
+
+    if (!book.publication_date) {
+      setPublicationDateError(true);
+      return;
+    }
+
+    if (!book.page_count) {
+      setPageCountError(true);
+      return;
+    }
+
+    if (!book.image_url) {
+      setImageUrlError(true);
+      return;
+    }
+
+    if (!book.content) {
+      setContentError(true);
+      return;
+    }
+
+    if (!book.genre) {
+      setGenreError(true);
+      return;
+    }
+
+    // Rest of the function...
 
     // Retrieve the token from localStorage
     const authToken = localStorage.getItem("auth_token");
@@ -64,12 +106,8 @@ export const BookForm = () => {
         return;
       }
 
-      // Parse the response to get the newly created book's ID
-      const createdBook = await response.json();
-      const bookId = createdBook.id;
-
       // Navigate to the detail page of the created book
-      navigate(`/bookList/${bookId}`);
+      navigate(`/`);
     } catch (error) {
       console.error("Error posting book:", error);
     }
@@ -94,6 +132,7 @@ export const BookForm = () => {
                 value={book.title}
                 required
               />
+              {titleError && <p>Please fill out the title field.</p>}
             </div>
             <div className="form-field">
               <label>Author:</label>
@@ -106,6 +145,7 @@ export const BookForm = () => {
                 value={book.author}
                 required
               />
+              {authorError && <p>Please fill out the author field.</p>}
             </div>
             <div className="form-field">
               <label>Publication Date:</label>
@@ -118,6 +158,9 @@ export const BookForm = () => {
                 value={book.publication_date}
                 required
               />
+              {publicationDateError && (
+                <p>Please fill out the publication date field.</p>
+              )}
             </div>
             <div className="form-field">
               <label>Page Count:</label>
@@ -130,6 +173,7 @@ export const BookForm = () => {
                 value={book.page_count}
                 required
               />
+              {pageCountError && <p>Please fill out the page count field.</p>}
             </div>
             <div className="form-field">
               <label>Image:</label>
@@ -142,6 +186,7 @@ export const BookForm = () => {
                 value={book.image_url}
                 required
               />
+              {imageUrlError && <p>Please fill out the image field.</p>}
             </div>
             <div className="form-field">
               <label>Content:</label>
@@ -154,6 +199,7 @@ export const BookForm = () => {
                 required
                 maxLength={1000}
               />
+              {contentError && <p>Please fill out the content field.</p>}
               Max Characters 1000
             </div>
             <fieldset className="fieldset-div">
@@ -164,7 +210,9 @@ export const BookForm = () => {
                   name="genre"
                   onChange={updateGenre}
                   value={book.genre}
+                  required
                 >
+                  {genreError && <p>Please select a genre.</p>}
                   <option value={0}>Please select a Genre</option>
                   {genreLabel.map((typeObj) => {
                     return (
@@ -179,7 +227,7 @@ export const BookForm = () => {
           </fieldset>
         </div>
         <div className="button-div">
-          <button className="cancel-button" onClick={postBook}>
+          <button className="Add-button" onClick={postBook}>
             Add Book
           </button>
           <button className="cancel-button" onClick={() => navigate(-1)}>

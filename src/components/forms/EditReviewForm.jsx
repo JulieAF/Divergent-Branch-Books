@@ -23,10 +23,6 @@ export const EditReviewForm = () => {
     setReview(copy);
   };
 
-  const handleCancel = () => {
-    navigate(-2);
-  };
-
   const handleSave = (event) => {
     event.preventDefault();
 
@@ -66,9 +62,6 @@ export const EditReviewForm = () => {
         <div className="button-div">
           <button className="cancel-button" onClick={handleSave}>
             Save
-          </button>
-          <button className="cancel-button" onClick={handleCancel}>
-            Cancel
           </button>
         </div>
       </form>

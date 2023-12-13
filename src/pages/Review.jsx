@@ -35,7 +35,7 @@ export const Review = () => {
         style={{ textDecoration: "none", color: "rgb(79, 17, 146)" }}
         book={book}
         key={book.id}
-        to={`/bookList/${book.id}`}
+        to={`/book/${book.id}`}
       >
         <div>Go Back to Book</div>
       </Link>
@@ -49,7 +49,7 @@ export const Review = () => {
                 style={{ textDecoration: "none", color: "rgb(79, 17, 146)" }}
                 book={review}
                 key={review.id}
-                to={`/bookList/${book.id}/review/${review.id}`}
+                to={`/review/${review.id}`}
               >
                 <div className="card-item" key={review.id}>
                   <div>

@@ -8,32 +8,26 @@ export const ReviewDetails = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    getReviewByReviewId(reviewId).then(
-      (review) => {
-        setReview(review);
-      },
-      [reviewId]
-    );
-  });
+    getReviewByReviewId(reviewId).then((review) => {
+      setReview(review);
+    });
+  }, [reviewId]);
 
   const handleDelete = (reviewId) => {
     const confirmDelete = window.confirm(
       "Are you sure you want to delete this review?"
     );
     if (confirmDelete) {
-      deleteReview(reviewId)
-        .then(() => {
-          // Filter out the deleted review from the reviews list
-          const updatedReviews = review.filter(
-            (review) => review.id !== reviewId
-          );
-          setReview(updatedReviews);
-          navigate(-2);
-        })
-        .catch((error) => {
-          // Handle error, if any, during deletion
-          console.error("Error deleting review:", error);
-        });
+      deleteReview(reviewId, () => {
+        // Filter out the deleted review from the reviews list
+        const updatedReviews = review.filter(
+          (review) => review.id !== reviewId
+        );
+        setReview(updatedReviews);
+      }).catch((error) => {
+        // Handle error, if any, during deletion
+        console.error("Error deleting review:", error);
+      });
     }
   };
 
@@ -58,7 +52,14 @@ export const ReviewDetails = () => {
             >
               Edit
             </button>
-            <button onClick={() => handleDelete(review.id)}>Delete</button>
+            <button
+              onClick={() => {
+                handleDelete(review.id);
+                navigate(`/`);
+              }}
+            >
+              Delete
+            </button>
           </div>
         </div>
       ) : (

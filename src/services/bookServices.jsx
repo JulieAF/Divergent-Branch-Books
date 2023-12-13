@@ -28,3 +28,13 @@ export const editBook = (updatedBook) => {
     body: JSON.stringify(updatedBook),
   });
 };
+
+export const deleteBook = (bookId) => {
+  return fetch(`http://localhost:8000/books/${bookId}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Token ${localStorage.getItem("auth_token")}`,
+      "Content-Type": "application/json",
+    },
+  });
+};

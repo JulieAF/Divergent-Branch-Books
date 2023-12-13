@@ -29,7 +29,7 @@ export const ReviewList = () => {
         {reviews && reviews.length ? (
           reviews.map((review) => (
             <div className="card-item" key={review.id}>
-              <Link to={`/reviewLists/${review.id}`}>
+              <Link to={`/review/${review.id}`}>
                 <div className="review-details">
                   <div className="review-header">
                     <div className="review-title">{review.book.title}</div>
