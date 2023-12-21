@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./NavBar.css";
-// import Logo from "./rare.jpeg";
+import Logo from "./logo.png";
 
 export const NavBar = ({ token, setToken }) => {
   const navigate = useNavigate();
@@ -21,13 +21,13 @@ export const NavBar = ({ token, setToken }) => {
     >
       <div className="navbar-brand">
         <a className="navbar-logo-group" href="/">
-          {/* <img
+          <img
             className="navbar-logo"
             src={Logo}
             height="3rem"
             alt="Rare Logo"
-          />{" "} */}
-          <h1 className="title is-4">Divergent Branch Books</h1>
+          />{" "}
+          {/* <h1 className="title is-4">Divergent Branch Books</h1> */}
         </a>
 
         <a

@@ -1,20 +1,23 @@
-/* .navbar-item img {
-   max-height: 3rem;
-} */
+.navbar-item img {
+  max-height: 3rem;
+  border: dotted rgb(0, 128, 122);
+}
 a {
   text-decoration: none;
   color: inherit; /* Set the color to inherit from the parent element */
+  border: dotted rgb(113, 128, 0);
 }
 
 .navbar-logo-group {
   display: flex;
-  width: 170px;
-  flex-direction: column;
+  /* width: 600px; */
+  /* flex-direction: column; */
+  border: dotted purple;
 }
 
 .navbar-item {
   /* font-family: 'Libre Baskerville', serif; */
-  font-family: "Playfair Display", serif;
+  font-family: "Handjet", sans-serif;
   font-size: 20px;
   max-height: 20px;
   margin: 10px 50px;
@@ -22,18 +25,24 @@ a {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
+  border: dotted rgb(128, 111, 0);
 }
 
 .navbar-logo {
-  height: 170px;
-  width: 170px;
+  height: 175px;
+  width: 175px;
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.178);
+  border: dotted rgb(219, 123, 219);
 }
 
 .navbar {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: flex-start;
+  justify-content: flex-end;
+  border: dotted rgb(128, 66, 0);
+  width: 100%;
+  left: 0 !important;
+  top: 0 !important;
 }
 
 .navbar-menu {
@@ -44,11 +53,13 @@ a {
   background-color: rgba(128, 128, 128, 0.279);
   border-radius: 10px;
   padding: 20px;
+  border: dotted rgb(9, 128, 0);
 }
 
 .navbar-brand {
   display: flex;
   flex-wrap: nowrap;
+  border: dotted rgb(23, 0, 128);
 }
 
 .navbar-start {
@@ -58,14 +69,16 @@ a {
   width: 80%;
   align-items: center;
   border-radius: 10px;
+  border: dotted purple;
 }
 
 .navbar-end {
   display: flex;
   justify-content: flex-end;
   width: 10%;
-  align-items: flex-start;
+  align-items: center;
   padding: 20px;
+  border: dotted pink;
 }
 
 .button {
@@ -75,9 +88,14 @@ a {
   border-radius: 5px;
   border: none;
   box-shadow: 1px 1px 3px black;
+  border: dotted blue;
+  font-family: "Handjet", sans-serif;
+  font-size: 18px;
+  width: 100px;
 }
 
 .button:hover {
   transform: scale(1.1);
   cursor: pointer;
+  border: dotted red;
 }

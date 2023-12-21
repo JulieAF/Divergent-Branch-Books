@@ -44,7 +44,7 @@ export const EditBookForm = () => {
   };
 
   const handleCancel = () => {
-    navigate(`/bookList/${bookId}`);
+    navigate(`/book/${bookId}`);
   };
 
   const handleSave = (event) => {
@@ -62,7 +62,7 @@ export const EditBookForm = () => {
     };
 
     editBook(updatedItem).then(() => {
-      navigate(`/bookList/${bookId}`);
+      navigate(`/book/${bookId}`);
     });
   };
 
@@ -170,7 +170,7 @@ export const EditBookForm = () => {
           </fieldset>
         </div>
         <div className="button-div">
-          <button className="cancel-button" onClick={handleSave}>
+          <button className="save-button" onClick={handleSave}>
             Save
           </button>
           <button className="cancel-button" onClick={handleCancel}>

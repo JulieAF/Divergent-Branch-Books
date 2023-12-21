@@ -60,7 +60,7 @@ export const EditReviewForm = () => {
           </fieldset>
         </div>
         <div className="button-div">
-          <button className="cancel-button" onClick={handleSave}>
+          <button className="save-button" onClick={handleSave}>
             Save
           </button>
         </div>

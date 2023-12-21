@@ -28,6 +28,16 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+
+  background-image: url(https://th.bing.com/th/id/OIG.UnZmAC5zP6yCRUgjz2Le?pid=ImgGn);
+
+  /* Full height */
+  /* height: 10%; */
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h1 {

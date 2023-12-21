@@ -47,7 +47,13 @@ function BookList() {
   return (
     <>
       <div>
-        <button className="btn-div" onClick={() => navigate("/create-book")}>
+        <span className="font-link">
+          <h1 className="title">Divergent Branch Books</h1>
+        </span>
+        <button
+          className="book-btn-div"
+          onClick={() => navigate("/create-book")}
+        >
           Add Book
         </button>
         <BookGenreFilter
