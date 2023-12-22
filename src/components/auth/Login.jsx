@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "../../managers/AuthManager";
+import "./auth.css";
+
 export const Login = ({ setToken }) => {
   const username = useRef();
   const password = useRef();
@@ -26,8 +28,8 @@ export const Login = ({ setToken }) => {
   };
 
   return (
-    <section className="columns is-centered">
-      <form className="column is-two-thirds" onSubmit={handleLogin}>
+    <section className="column">
+      <form className="form" onSubmit={handleLogin}>
         <h1 className="title">Divergent Branch Books</h1>
         <p className="subtitle">Please sign in</p>
 

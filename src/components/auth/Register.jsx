@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { registerUser } from "../../managers/AuthManager";
+import "./auth.css";
 
 export const Register = ({ setToken }) => {
   const firstName = useRef();

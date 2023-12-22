@@ -1,0 +1,5 @@
+.column {
+  display: flex;
+  justify-content: center;
+  border: dotted rgb(74, 175, 78);
+}
