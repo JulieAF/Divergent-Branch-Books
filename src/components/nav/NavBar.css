@@ -1,44 +1,23 @@
-/* .navbar-item img {
-  max-height: rem;
-  border: dotted rgb(231, 63, 26);
-}
-a {
-  text-decoration: none;
-  color: inherit; 
-  border: dotted rgb(113, 128, 0);
-} */
-
 .navbar-logo-group {
   display: flex;
-  /* width: 600px; */
-  /* flex-direction: column; */
-  border: dotted rgb(217, 44, 128);
 }
 
 .navbar-item {
-  /* font-family: 'Libre Baskerville', serif; */
   font-family: "Handjet", sans-serif;
   font-size: 25px;
   max-height: 25px;
   margin: 10px 50px;
-  /* font-weight: bold; */
   display: flex;
-  /* flex-wrap: nowrap; */
   align-items: center;
-  border: dotted rgb(104, 229, 70);
 }
 
 .navbar-logo {
   height: 175px;
   width: 175px;
-  /* box-shadow: 0px 0px 1px rgba(86, 183, 95, 0.178); */
-  border: dotted rgb(219, 123, 219);
 }
 
 .navbar {
   display: flex;
-  border: dotted rgb(128, 66, 0);
-  /* width: 150%; */
 }
 
 .navbar-menu {
@@ -49,14 +28,7 @@ a {
   background-color: rgb(23, 18, 49);
   border-radius: 10px;
   padding: 20px;
-  border: dotted rgb(9, 128, 0);
 }
-
-/* .navbar-brand {
-  display: flex;
-  flex-wrap: nowrap;
-  border: dotted rgb(195, 153, 76);
-} */
 
 .navbar-start {
   display: flex;
@@ -65,32 +37,29 @@ a {
   width: 80%;
   align-items: center;
   border-radius: 10px;
-  border: dotted rgb(39, 157, 193);
 }
 
 .navbar-end {
   display: flex;
   justify-content: center;
-  width: 10%;
   align-items: center;
-  padding: 20px;
-  border: dotted rgb(182, 158, 162);
+  padding: 30px;
 }
 
 .button {
   padding: 10px 12px;
-  /* font-weight: bold; */
   font-size: 20px;
   border-radius: 5px;
-  /* border: none; */
   box-shadow: 1px 1px 3px rgb(176, 145, 244);
-  /* border: dotted rgb(255, 183, 0); */
   font-family: "Handjet", sans-serif;
   width: 100px;
 }
 
 .button:hover {
-  /* transform: scale(1.1); */
   cursor: pointer;
-  border: dotted rgb(61, 116, 20);
+}
+
+.button-login {
+  margin: 10px;
+  width: 30px;
 }

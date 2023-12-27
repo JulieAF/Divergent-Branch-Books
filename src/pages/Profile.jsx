@@ -11,15 +11,19 @@ export const Profile = () => {
   }, []);
 
   return (
-    <div className="card-header" key={currentUser.id}>
-      <div className="card-body">
-        Username: {currentUser?.user?.username}
+    <div className="profile" key={currentUser.id}>
+      <div className="profile-image">
         <img
           src={currentUser.profile_image_url}
           alt={currentUser.name}
           width="400px"
         ></img>
-        Content: {currentUser.bio}
+      </div>
+      <div className="profile-header">
+        <div className="profile-username">
+          Username: {currentUser?.user?.username}
+        </div>
+        <div className="profile-bio">{currentUser.bio}</div>
       </div>
     </div>
   );

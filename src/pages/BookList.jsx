@@ -72,10 +72,10 @@ function BookList() {
                       alt={book.name}
                       width="400px"
                     ></img>
-                    <div className="book-title">Title: {book.title}</div>
-                    <div className="book-author">Author: {book.author}</div>
-                    <div className="book-date">
-                      Date: {book.publication_date}
+                    <div className="book-info">
+                      <div className="book-title">{book.title}</div>
+                      <div className="book-author">by {book.author}</div>
+                      <div className="book-date">{book.publication_date}</div>
                     </div>
                   </div>
                 </div>

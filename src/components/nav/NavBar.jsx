@@ -65,7 +65,7 @@ export const NavBar = ({ token, setToken }) => {
             <div className="buttons">
               {token ? (
                 <button
-                  className="button is-outlined"
+                  className="button"
                   onClick={() => {
                     setToken("");
                     navigate("/login");
@@ -75,10 +75,10 @@ export const NavBar = ({ token, setToken }) => {
                 </button>
               ) : (
                 <>
-                  <Link to="/login" className="button is-outlined">
+                  <Link to="/login" className="button button-login">
                     Login
                   </Link>
-                  <Link to="/register" className="button is-link">
+                  <Link to="/register" className="button button-register">
                     Register
                   </Link>
                 </>

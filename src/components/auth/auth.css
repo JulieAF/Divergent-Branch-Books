@@ -1,5 +1,44 @@
 .column {
   display: flex;
   justify-content: center;
-  border: dotted rgb(74, 175, 78);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1%;
+}
+
+.title {
+}
+
+.subtitle {
+  font-size: 35px;
+}
+
+.field {
+}
+
+.label {
+  font-size: 20px;
+}
+.button-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.button-submit {
+  margin: 25px;
+  padding: 10px 12px;
+  font-size: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgb(176, 145, 244);
+  font-family: "Handjet", sans-serif;
+  width: 100px;
+}
+
+.warning {
+  font-size: 20px;
 }
