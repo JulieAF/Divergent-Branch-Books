@@ -34,21 +34,25 @@ export const BookDetails = () => {
       <div className="card-item">
         {book ? (
           <>
-            <div className="card-header" key={book.id}>
-              <img src={book.image_url} alt={book.name} width="400px"></img>
-              <div className="card-title">Title: {book.title}</div>
-              <div className="card-author">Author: {book.author}</div>
-            </div>
-            <div className="card-body">Content: {book.content}</div>
-            <div className="card-footer">
-              <div className="cat-main">
-                <div className="card-genres-header">Genre:</div>
-                <div className="genre-label">{book.genre.label}</div>
+            <div className="book-details-header" key={book.id}>
+              <div className="book-details-image">
+                <img src={book.image_url} alt={book.name} width="400px"></img>
               </div>
-              <div className="card-page_count">
-                <ul className="card-page_count-header">
-                  Page Count: {book.page_count}{" "}
-                </ul>
+              <div className="book-details-info">
+                <div className="book-details-title">{book.title}</div>
+                <div className="book-details-author">by {book.author}</div>
+                <div className="book-details-sub-info">
+                  <div className="book-details-genre">{book.genre.label}</div>
+                  <div className="book-details-date">
+                    {book.publication_date}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="book-details-body">{book.content}</div>
+            <div className="book-details-footer">
+              <div className="book-details-page_count">
+                <ul>Page Count: {book.page_count} </ul>
               </div>
             </div>
           </>
@@ -57,13 +61,14 @@ export const BookDetails = () => {
         )}
       </div>
       {book?.is_owner ? (
-        <div className="manage-edit-div">
-          <div className="manage-books-div">
-            <button onClick={() => navigate(`/book/${book.id}/edit-book`)}>
+        <div className="my-review-buttons">
+          <div>
+            <button
+              className="edit-button"
+              onClick={() => navigate(`/book/${book.id}/edit-book`)}
+            >
               Edit
             </button>
-          </div>
-          <div className="comment-buttons">
             <button
               className="delete-button"
               onClick={() => {

@@ -10,57 +10,34 @@
 }
 
 .form-and-header {
-  width: 60%;
-  /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
+  width: 35%;
 }
 
 .form-fieldset {
   margin: 20px 10px;
   border: none;
   border-radius: 10px;
-  box-shadow: 0px 0px 5px black;
+  box-shadow: 0px 0px 5px rgb(255, 255, 255);
   padding: 10px;
-}
-
-label {
-  width: 20%;
+  height: 600px;
 }
 
 .form-field {
   margin: 10px;
   padding: 5px;
   display: flex;
+  justify-content: center;
 }
 
 .input-field {
-  width: 50%;
+  width: 90%;
+  height: 550px;
   border-radius: 5px;
-  padding: 5px;
-}
-
-.textarea-field {
-  width: 50%;
-  border-radius: 5px;
-  height: 60px;
-}
-
-.input {
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.fieldset-div {
-  background-color: rgba(128, 128, 128, 0.368);
-  border-radius: 10px;
-  margin: 10px 0px;
-}
-
-.box-input {
-  display: flex;
-  justify-content: space-between;
-  width: 40%;
+  padding: 10px;
+  background-color: aliceblue;
+  font-size: 22px;
+  font-family: "Handjet", sans-serif;
+  color: black;
 }
 
 .button-div {
@@ -68,6 +45,18 @@ label {
   justify-content: center;
 }
 
+.submit-button {
+  margin: 20px;
+  padding: 10px 12px;
+  font-size: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgb(176, 145, 244);
+}
+
 .cancel-button {
   margin: 20px;
+  padding: 10px 12px;
+  font-size: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgb(176, 145, 244);
 }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { deleteReview, getReviewByReviewId } from "../services/reviewServices";
+import "./pages.css";
 
 export const ReviewDetails = () => {
   const { reviewId } = useParams();
@@ -36,8 +37,10 @@ export const ReviewDetails = () => {
       <div className="card-item">
         {review ? (
           <>
-            <div className="card-header" key={review.id}>
-              <div className="card-body">Content: {review.content}</div>
+            <div className="review-details-header" key={review.id}>
+              <div className="review-details-body">
+                Content: {review.content}
+              </div>
             </div>
           </>
         ) : (
@@ -45,22 +48,22 @@ export const ReviewDetails = () => {
         )}
       </div>
       {review?.is_owner ? (
-        <div className="manage-edit-div">
-          <div className="manage-reviews-div">
-            <button
-              onClick={() => navigate(`/review/${review.id}/edit-review`)}
-            >
-              Edit
-            </button>
-            <button
-              onClick={() => {
-                handleDelete(review.id);
-                navigate(`/`);
-              }}
-            >
-              Delete
-            </button>
-          </div>
+        <div className="my-review-buttons">
+          <button
+            className="edit-button"
+            onClick={() => navigate(`/review/${review.id}/edit-review`)}
+          >
+            Edit
+          </button>
+          <button
+            className="delete-button"
+            onClick={() => {
+              handleDelete(review.id);
+              navigate(`/`);
+            }}
+          >
+            Delete
+          </button>
         </div>
       ) : (
         ""

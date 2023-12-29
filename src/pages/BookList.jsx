@@ -65,18 +65,18 @@ function BookList() {
           genreFilteredBooks.map((book) => (
             <div className="card-item" key={book.id}>
               <Link to={`/book/${book.id}`}>
-                <div className="book-details">
-                  <div className="book-header">
+                <div className="book-header">
+                  <div className="book-image">
                     <img
                       src={book.image_url}
                       alt={book.name}
                       width="400px"
                     ></img>
-                    <div className="book-info">
-                      <div className="book-title">{book.title}</div>
-                      <div className="book-author">by {book.author}</div>
-                      <div className="book-date">{book.publication_date}</div>
-                    </div>
+                  </div>
+                  <div className="book-info">
+                    <div className="book-title">{book.title}</div>
+                    <div className="book-author">by {book.author}</div>
+                    <div className="book-date">{book.publication_date}</div>
                   </div>
                 </div>
               </Link>

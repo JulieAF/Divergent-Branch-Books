@@ -10,20 +10,6 @@
   font-family: "Handjet", sans-serif;
 }
 
-.book-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 35px;
-  padding-left: 25%;
-}
-
-.book-header {
-  display: flex;
-  flex-direction: row;
-}
-
 .card-item {
   border-radius: 15px;
   background-color: rgba(128, 128, 128, 0.279);
@@ -32,18 +18,25 @@
   padding: 1rem;
 }
 
-/* .book-item {
+.book-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.book-image {
+  margin-right: 10%;
+  align-self: flex-start;
+}
+
+.book-info {
   display: flex;
   flex-direction: column;
-  border: 2px black solid;
-  background-color: rgb(188, 237, 237);
-  width: 50%;
-  margin: 20px auto;
-  padding: 1rem;
-  text-align: center;
-  font-weight: bold;
-  border: dotted rgb(128, 15, 0);
-} */
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  display: flex;
+  width: 60%;
+}
 
 .book-btn-div {
   display: flex;
@@ -125,9 +118,72 @@
   font-size: 20px;
 }
 
-.genre-label {
-  font-weight: lighter;
-  border: dotted rgb(128, 17, 0);
+.book-details-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.book-details-image {
+  margin-right: 10%;
+  align-self: flex-start;
+}
+
+.book-details-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.book-details-sub-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.book-details-title {
+  font-size: 30px;
+}
+.book-details-author {
+  font-size: 20px;
+}
+
+.book-details-genre {
+  padding: 10px;
+}
+
+.book-details-date {
+  padding: 10px;
+}
+
+.book-details-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.book-details-page_count {
+  padding-right: 25px;
+}
+
+.my-review-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10%;
+}
+
+.edit-button {
+  padding: 10px 12px;
+  margin: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgb(176, 145, 244);
+}
+
+.delete-button {
+  padding: 10px 12px;
+  margin: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgb(176, 145, 244);
 }
 
 .review-buttons {
@@ -135,20 +191,57 @@
   flex-direction: column;
   align-items: center;
   margin: 20px;
-  border: dotted purple;
 }
 
 .view-review-button {
   margin: 10px;
-  border: dotted purple;
+  padding: 10px 12px;
+  font-size: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgb(176, 145, 244);
 }
 
 .add-review-button {
   margin: 10px;
-  border: dotted purple;
+  padding: 10px 12px;
+  font-size: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgb(176, 145, 244);
 }
 
-.delete-button {
-  max-height: 40px;
-  border: dotted purple;
+.back-container {
+  display: flex;
+  margin-left: 90%;
+}
+
+.back {
+  font-size: 20px;
+}
+
+.back-text {
+  background-color: fuchsia;
+  padding: 10px 12px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgb(176, 145, 244);
+}
+
+.back-text:hover {
+  color: black;
+}
+
+.review-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 20px;
+}
+
+.review-details-body {
+  font-size: 20px;
+}
+
+.error {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
 }

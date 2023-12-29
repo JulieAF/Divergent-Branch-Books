@@ -25,7 +25,7 @@ a:hover {
 body {
   margin: 0;
   min-height: 100vh;
-
+  background-image: url();
   /* background-image: url(https://th.bing.com/th/id/OIG.UnZmAC5zP6yCRUgjz2Le?pid=ImgGn); */
 
   background-position: center;
