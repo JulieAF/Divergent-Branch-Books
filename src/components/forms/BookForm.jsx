@@ -119,12 +119,12 @@ export const BookForm = () => {
         <div className="h1-div">
           <h1>New Book Form</h1>
         </div>
-        <div className="form-container">
-          <fieldset className="form-fieldset">
-            <div className="form-field">
+        <div className="edit-book-form-container">
+          <fieldset className="edit-book-form-fieldset">
+            <div className="edit-book-form-field">
               <label>Title:</label>
               <input
-                className="input-field"
+                className="edit-book-input-field"
                 id="title"
                 onChange={updateBook}
                 type="text"
@@ -134,10 +134,10 @@ export const BookForm = () => {
               />
               {titleError && <p>Please fill out the title field.</p>}
             </div>
-            <div className="form-field">
+            <div className="edit-book-form-field">
               <label>Author:</label>
               <input
-                className="input-field"
+                className="edit-book-input-field"
                 id="author"
                 onChange={updateBook}
                 type="text"
@@ -147,10 +147,10 @@ export const BookForm = () => {
               />
               {authorError && <p>Please fill out the author field.</p>}
             </div>
-            <div className="form-field">
+            <div className="edit-book-form-field">
               <label>Publication Date:</label>
               <input
-                className="input-field"
+                className="edit-book-input-field"
                 id="publication_date"
                 onChange={updateBook}
                 type="text"
@@ -162,10 +162,10 @@ export const BookForm = () => {
                 <p>Please fill out the publication date field.</p>
               )}
             </div>
-            <div className="form-field">
+            <div className="edit-book-form-field">
               <label>Page Count:</label>
               <input
-                className="input-field"
+                className="edit-book-input-field"
                 id="page_count"
                 onChange={updateBook}
                 type="text"
@@ -175,10 +175,10 @@ export const BookForm = () => {
               />
               {pageCountError && <p>Please fill out the page count field.</p>}
             </div>
-            <div className="form-field">
+            <div className="edit-book-form-field">
               <label>Image:</label>
               <input
-                className="input-field"
+                className="edit-book-input-field"
                 id="image_url"
                 onChange={updateBook}
                 type="text"
@@ -188,23 +188,8 @@ export const BookForm = () => {
               />
               {imageUrlError && <p>Please fill out the image field.</p>}
             </div>
-            <div className="form-field">
-              <label>Content:</label>
-              <textarea
-                className="textarea-field"
-                id="content"
-                onChange={updateBook}
-                placeholder=""
-                value={book.content}
-                required
-                maxLength={1000}
-              />
-              {contentError && <p>Please fill out the content field.</p>}
-              Max Characters 1000
-            </div>
             <fieldset className="fieldset-div">
-              <div className="box-input">
-                <div>Genre:</div>
+              <div className="edit-book-input-field">
                 <select
                   className="input"
                   name="genre"
@@ -224,10 +209,24 @@ export const BookForm = () => {
                 </select>
               </div>
             </fieldset>
+            <div className="edit-book-form-field">
+              <label>Content:</label>
+              <textarea
+                className="input-field"
+                id="content"
+                onChange={updateBook}
+                placeholder=""
+                value={book.content}
+                required
+                maxLength={1000}
+              />
+              {contentError && <p>Please fill out the content field.</p>}
+              Max Characters 1000
+            </div>
           </fieldset>
         </div>
         <div className="button-div">
-          <button className="Add-button" onClick={postBook}>
+          <button className="submit-button" onClick={postBook}>
             Add Book
           </button>
           <button className="cancel-button" onClick={() => navigate(-1)}>
