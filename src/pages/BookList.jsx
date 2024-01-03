@@ -47,7 +47,13 @@ function BookList() {
   return (
     <>
       <div>
-        <button className="btn-div" onClick={() => navigate("/create-book")}>
+        <span className="font-link">
+          <h1 className="title">Divergent Branch Books</h1>
+        </span>
+        <button
+          className="book-btn-div"
+          onClick={() => navigate("/create-book")}
+        >
           Add Book
         </button>
         <BookGenreFilter
@@ -59,18 +65,18 @@ function BookList() {
           genreFilteredBooks.map((book) => (
             <div className="card-item" key={book.id}>
               <Link to={`/book/${book.id}`}>
-                <div className="book-details">
-                  <div className="book-header">
+                <div className="book-header">
+                  <div className="book-image">
                     <img
                       src={book.image_url}
                       alt={book.name}
                       width="400px"
                     ></img>
-                    <div className="book-title">Title: {book.title}</div>
-                    <div className="book-author">Author: {book.author}</div>
-                    <div className="book-date">
-                      Date: {book.publication_date}
-                    </div>
+                  </div>
+                  <div className="book-info">
+                    <div className="book-title">{book.title}</div>
+                    <div className="book-author">by {book.author}</div>
+                    <div className="book-date">{book.publication_date}</div>
                   </div>
                 </div>
               </Link>

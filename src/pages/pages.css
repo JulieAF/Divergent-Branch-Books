@@ -1,155 +1,189 @@
-.page-title {
-  display: flex;
-  justify-content: center;
-  font-weight: 500;
-  font-size: xx-large;
-  margin: 0 2rem 2rem 2rem;
+.font-link {
+  font-family: "Handjet", sans-serif;
+  font-family: "Pixelify Sans", sans-serif;
+  font-family: "Rajdhani", sans-serif;
 }
 
-.book-image {
-  border-radius: 10px;
-  box-shadow: 1px 1px 3px;
-  margin: 10px;
+.title {
+  display: flex;
+  justify-content: center;
+  font-family: "Handjet", sans-serif;
+}
+
+.card-item {
+  border-radius: 15px;
+  background-color: rgba(128, 128, 128, 0.279);
+  width: 60%;
+  margin: 20px auto;
+  padding: 1rem;
 }
 
 .book-header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
 }
 
-.book-footer {
-  margin-top: 30px;
-  display: flex;
-  justify-content: space-between;
-  /* max-height: 400px; */
+.book-image {
+  margin-right: 10%;
+  align-self: flex-start;
 }
 
-.card-item {
-  border: none;
-  border-radius: 10px;
-  padding: 5rem;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.366);
-  background-color: rgba(128, 128, 128, 0.279);
-  width: 80%;
-  margin: 20px auto;
-  /* margin-left: 20%; */
-  padding: 1rem;
-  text-align: center;
-  font-weight: bold;
-}
-
-.card-header {
-  display: flex;
-  justify-content: space-between;
-}
-.card-body {
+.book-info {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin: 20px;
-  border-radius: 10px;
-  padding: 2rem;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.366);
-  background-color: rgba(128, 128, 128, 0.279);
-}
-.card-footer {
+  font-size: 35px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  width: 60%;
 }
 
-.card-genres {
-  border: none;
-}
-
-.card-genres-header {
-  margin: 10px;
-  border: none;
-}
-
-.card-label {
-  margin: 10px;
+.book-btn-div {
+  display: flex;
+  margin-left: 88%;
+  padding: 10px 12px;
   font-size: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgb(176, 145, 244);
 }
 
-.book-item {
-  display: flex;
-  flex-direction: column;
-  border: 2px black solid;
-  background-color: rgb(188, 237, 237);
+.genre-select-container {
+  padding-left: 83.5%;
+  padding-bottom: 2rem;
+}
+
+.genre-select {
+  margin: 35px;
+  padding: 0.4rem;
+  border-radius: 0.25rem;
+  width: 200px;
+  color: rgb(255, 255, 255);
+}
+
+.review-card-item {
+  border-radius: 15px;
+  background-color: rgba(128, 128, 128, 0.279);
   width: 50%;
   margin: 20px auto;
   padding: 1rem;
-  text-align: center;
-  font-weight: bold;
 }
 
-.btn-div {
+.review-header {
   display: flex;
-  margin: auto;
-  justify-content: space-evenly;
-  padding: 10px 12px;
-  font-weight: bold;
-  font-size: 12px;
-  border-radius: 5px;
-  border: none;
-  /* box-shadow: 1px 1px 3px black; */
+  flex-direction: row;
+  justify-content: space-between;
+}
+.review-title {
+  font-size: 30px;
+  padding-left: 25px;
 }
 
-.genre-btn-div {
+.review-author {
+  font-size: 20px;
+  padding-right: 5px;
+}
+
+.review-content {
   display: flex;
-  width: 400px;
-  justify-content: space-evenly;
-  padding: 10px 12px;
-  font-weight: bold;
-  font-size: 12px;
-  border-radius: 5px;
-  border: none;
-  /* box-shadow: 1px 1px 3px black; */
+  flex-direction: row;
+  justify-content: center;
+  font-size: 20px;
 }
 
-.genre-item {
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 15px;
+  background-color: rgba(128, 128, 128, 0.279);
+  width: 50%;
+  margin: 20px auto;
+  padding: 1rem;
+}
+.profile-header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: none;
-  border-radius: 10px;
-  padding: 5rem;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.366);
-  background-color: rgba(128, 128, 128, 0.279);
-  width: 80%;
-  margin: 20px auto;
-  /* margin-left: 20%; */
-  padding: 1rem;
-  text-align: center;
-  font-weight: bold;
 }
 
-.genre-main {
-  margin: 10px;
+.profile-image {
+  padding: 30px;
+}
+.profile-username {
+  font-size: 30px;
 }
 
-.genre-label {
-  font-weight: lighter;
+.profile-bio {
+  margin-top: 5%;
+  font-size: 20px;
 }
 
-.welcome-container {
+.book-details-header {
   display: flex;
-  justify-content: center;
-  margin-top: 10rem;
-  align-content: center;
-  flex-basis: 400px;
+  flex-direction: row;
 }
 
-.welcome-message {
+.book-details-image {
+  margin-right: 10%;
+  align-self: flex-start;
+}
+
+.book-details-info {
   display: flex;
-  font-size: xx-large;
-  background-color: rgba(128, 128, 128, 0.279);
-  height: 100px;
+  flex-direction: column;
   align-items: center;
-  padding: 5rem;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.366);
+  width: 50%;
+}
+
+.book-details-sub-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.book-details-title {
+  font-size: 30px;
+}
+.book-details-author {
+  font-size: 20px;
+}
+
+.book-details-genre {
+  padding: 10px;
+}
+
+.book-details-date {
+  padding: 10px;
+}
+
+.book-details-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.book-details-page_count {
+  padding-right: 25px;
+}
+
+.my-review-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10%;
+}
+
+.edit-button {
+  padding: 10px 12px;
+  margin: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgb(176, 145, 244);
+}
+
+.delete-button {
+  padding: 10px 12px;
+  margin: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgb(176, 145, 244);
 }
 
 .review-buttons {
@@ -161,12 +195,53 @@
 
 .view-review-button {
   margin: 10px;
+  padding: 10px 12px;
+  font-size: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgb(176, 145, 244);
 }
 
 .add-review-button {
   margin: 10px;
+  padding: 10px 12px;
+  font-size: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgb(176, 145, 244);
 }
 
-.delete-button {
-  max-height: 40px;
+.back-container {
+  display: flex;
+  margin-left: 90%;
+}
+
+.back {
+  font-size: 20px;
+}
+
+.back-text {
+  background-color: fuchsia;
+  padding: 10px 12px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgb(176, 145, 244);
+}
+
+.back-text:hover {
+  color: black;
+}
+
+.review-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 20px;
+}
+
+.review-details-body {
+  font-size: 20px;
+}
+
+.error {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
 }

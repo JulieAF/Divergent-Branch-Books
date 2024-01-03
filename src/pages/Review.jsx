@@ -30,33 +30,42 @@ export const Review = () => {
 
   return (
     <>
-      <div className="h1">{book.title}</div>
-      <Link
-        style={{ textDecoration: "none", color: "rgb(79, 17, 146)" }}
-        book={book}
-        key={book.id}
-        to={`/book/${book.id}`}
-      >
-        <div>Go Back to Book</div>
-      </Link>
+      <h1 className="title">{book.title}</h1>
+      <div className="back-container">
+        <Link
+          className="back"
+          style={{
+            textDecoration: "none",
+            color: "aqua",
+          }}
+          book={book}
+          key={book.id}
+          to={`/book/${book.id}`}
+        >
+          <div className="back-text">Back to Book</div>
+        </Link>
+      </div>
       <div className="content">
         {reviews.length === 0 ? (
-          <p>No reviews to display.</p>
+          <div className="error">No reviews to display.</div>
         ) : (
           reviews.map((review) => {
             return (
               <Link
-                style={{ textDecoration: "none", color: "rgb(79, 17, 146)" }}
+                style={{
+                  textDecoration: "none",
+                  color: "aliceblue",
+                }}
                 book={review}
                 key={review.id}
                 to={`/review/${review.id}`}
               >
                 <div className="card-item" key={review.id}>
-                  <div>
-                    <h3>{review.content}</h3>
-                    <h3>Author: {review.alien_user?.user?.username}</h3>
-                    <h3>{review.created_on}</h3>
+                  <div className="review-details">
+                    <div>Author: {review.alien_user?.user?.username}</div>
+                    <div>{review.created_on}</div>
                   </div>
+                  <div className="review-details-body">{review.content}</div>
                 </div>
               </Link>
             );

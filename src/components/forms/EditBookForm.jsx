@@ -44,7 +44,7 @@ export const EditBookForm = () => {
   };
 
   const handleCancel = () => {
-    navigate(`/bookList/${bookId}`);
+    navigate(`/book/${bookId}`);
   };
 
   const handleSave = (event) => {
@@ -62,122 +62,122 @@ export const EditBookForm = () => {
     };
 
     editBook(updatedItem).then(() => {
-      navigate(`/bookList/${bookId}`);
+      navigate(`/book/${bookId}`);
     });
   };
 
   return (
-    <main className="form-parent">
-      <form className="form-and-header">
-        <div className="h1-div">
-          <h1>Edit Book Form</h1>
-        </div>
-        <div className="form-container">
-          <fieldset className="form-fieldset">
-            <div className="form-field">
-              <label>Title:</label>
-              <input
-                className="input-field"
-                id="title"
-                onChange={updateBook}
-                type="text"
-                placeholder=""
-                value={book.title}
-                required
-              />
-            </div>
-            <div className="form-field">
-              <label>Author:</label>
-              <input
-                className="input-field"
-                id="author"
-                onChange={updateBook}
-                type="text"
-                placeholder=""
-                value={book.author}
-                required
-              />
-            </div>
-            <div className="form-field">
-              <label>Publication Date:</label>
-              <input
-                className="input-field"
-                id="publication_date"
-                onChange={updateBook}
-                type="text"
-                placeholder=""
-                value={book.publication_date}
-                required
-              />
-            </div>
-            <div className="form-field">
-              <label>Page Count:</label>
-              <input
-                className="input-field"
-                id="page_count"
-                onChange={updateBook}
-                type="text"
-                placeholder=""
-                value={book.page_count}
-                required
-              />
-            </div>
-            <div className="form-field">
-              <label>Image:</label>
-              <input
-                className="input-field"
-                id="image_url"
-                onChange={updateBook}
-                type="text"
-                placeholder=""
-                value={book.image_url}
-                required
-              />
-            </div>
-            <div className="form-field">
-              <label>Content:</label>
-              <textarea
-                className="textarea-field"
-                id="content"
-                onChange={updateBook}
-                placeholder=""
-                value={book.content}
-                required
-                maxLength={1000}
-              />
-              Max Characters 1000
-            </div>
-            <fieldset className="fieldset-div">
-              <div className="box-input">
-                <div>Genre:</div>
-                <select
-                  className="input"
-                  name="genre"
-                  onChange={updateGenre}
-                  value={book.genre.id}
-                >
-                  {/* <option value={0}>Please select a Genre</option> */}
-                  {genreLabel.map((typeObj) => {
-                    return (
-                      <option key={typeObj.id} value={typeObj.id}>
-                        {typeObj.label}
-                      </option>
-                    );
-                  })}
-                </select>
+    <>
+      <main className="form-parent">
+        <form className="form-and-header">
+          <div className="h1-div">
+            <h1>Edit Book Form</h1>
+          </div>
+          <div className="edit-book-form-container">
+            <fieldset className="edit-book-form-fieldset">
+              <div className="edit-book-form-field">
+                <label>Title:</label>
+                <input
+                  className="edit-book-input-field"
+                  id="title"
+                  onChange={updateBook}
+                  type="text"
+                  placeholder=""
+                  value={book.title}
+                  required
+                />
+              </div>
+              <div className="edit-book-form-field">
+                <label>Author:</label>
+                <input
+                  className="edit-book-input-field"
+                  id="author"
+                  onChange={updateBook}
+                  type="text"
+                  placeholder=""
+                  value={book.author}
+                  required
+                />
+              </div>
+              <div className="edit-book-form-field">
+                <label>Publication Date:</label>
+                <input
+                  className="edit-book-input-field"
+                  id="publication_date"
+                  onChange={updateBook}
+                  type="text"
+                  placeholder=""
+                  value={book.publication_date}
+                  required
+                />
+              </div>
+              <div className="edit-book-form-field">
+                <label>Page Count:</label>
+                <input
+                  className="edit-book-input-field"
+                  id="page_count"
+                  onChange={updateBook}
+                  type="text"
+                  placeholder=""
+                  value={book.page_count}
+                  required
+                />
+              </div>
+              <div className="edit-book-form-field">
+                <label>Image:</label>
+                <input
+                  className="edit-book-input-field"
+                  id="image_url"
+                  onChange={updateBook}
+                  type="text"
+                  placeholder=""
+                  value={book.image_url}
+                  required
+                />
+              </div>
+              <fieldset className="fieldset-div">
+                <div className="edit-book-input-field">
+                  <select
+                    className="input"
+                    name="genre"
+                    onChange={updateGenre}
+                    value={book.genre.id}
+                  >
+                    {/* <option value={0}>Please select a Genre</option> */}
+                    {genreLabel.map((typeObj) => {
+                      return (
+                        <option key={typeObj.id} value={typeObj.id}>
+                          {typeObj.label}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </div>
+              </fieldset>
+              <div className="edit-book-form-field">
+                <label>Content:</label>
+                <textarea
+                  className="input-field"
+                  id="content"
+                  onChange={updateBook}
+                  placeholder=""
+                  value={book.content}
+                  required
+                  maxLength={1000}
+                />
               </div>
             </fieldset>
-          </fieldset>
-        </div>
-        <div className="button-div">
-          <button className="cancel-button" onClick={handleSave}>
-            Save
-          </button>
-          <button className="cancel-button" onClick={handleCancel}>
-            Cancel
-          </button>
-        </div>
-      </form>
-    </main>
+          </div>
+        </form>
+      </main>
+      <div className="button-div">
+        <button className="submit-button" onClick={handleSave}>
+          Save
+        </button>
+        <button className="cancel-button" onClick={handleCancel}>
+          Cancel
+        </button>
+      </div>
+    </>
   );
 };

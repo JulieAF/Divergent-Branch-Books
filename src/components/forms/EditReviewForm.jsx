@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import "./forms.css";
 import { editReview, getReviewByReviewId } from "../../services/reviewServices";
+import "./forms.css";
 
 export const EditReviewForm = () => {
   const { reviewId } = useParams();
@@ -40,14 +40,13 @@ export const EditReviewForm = () => {
     <main className="form-parent">
       <form className="form-and-header">
         <div className="h1-div">
-          <h1>Edit Review Form</h1>
+          <h1>Edit Review</h1>
         </div>
         <div className="form-container">
           <fieldset className="form-fieldset">
             <div className="form-field">
-              <label>Content:</label>
               <textarea
-                className="textarea-field"
+                className="input-field"
                 id="content"
                 onChange={updateReview}
                 placeholder=""
@@ -55,12 +54,11 @@ export const EditReviewForm = () => {
                 required
                 maxLength={1000}
               />
-              Max Characters 1000
             </div>
           </fieldset>
         </div>
         <div className="button-div">
-          <button className="cancel-button" onClick={handleSave}>
+          <button className="submit-button" onClick={handleSave}>
             Save
           </button>
         </div>

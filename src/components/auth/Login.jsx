@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../managers/AuthManager";
+import "./auth.css";
+
 export const Login = ({ setToken }) => {
   const username = useRef();
   const password = useRef();
@@ -26,8 +28,8 @@ export const Login = ({ setToken }) => {
   };
 
   return (
-    <section className="columns is-centered">
-      <form className="column is-two-thirds" onSubmit={handleLogin}>
+    <section className="column">
+      <form className="form" onSubmit={handleLogin}>
         <h1 className="title">Divergent Branch Books</h1>
         <p className="subtitle">Please sign in</p>
 
@@ -45,20 +47,15 @@ export const Login = ({ setToken }) => {
           </div>
         </div>
 
-        <div className="field is-grouped">
+        <div className="button-field">
           <div className="control">
-            <button className="button is-link" type="submit">
+            <button className="button-submit" type="submit">
               Submit
             </button>
           </div>
-          <div className="control">
-            <Link to="/register" className="button is-link is-light">
-              Cancel
-            </Link>
-          </div>
         </div>
         {isUnsuccessful ? (
-          <p className="help is-danger">Username or password not valid</p>
+          <p className="warning">Username or password not valid</p>
         ) : (
           ""
         )}

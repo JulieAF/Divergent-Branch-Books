@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { registerUser } from "../../managers/AuthManager";
+import "./auth.css";
 
 export const Register = ({ setToken }) => {
   const firstName = useRef();
@@ -41,8 +42,8 @@ export const Register = ({ setToken }) => {
   };
 
   return (
-    <section className="columns is-centered">
-      <form className="column is-two-thirds" onSubmit={handleRegister}>
+    <section className="column">
+      <form className="form" onSubmit={handleRegister}>
         <h1 className="title">Divergent Branch Books</h1>
         <p className="subtitle">Create an account</p>
         <div className="field">
@@ -77,7 +78,7 @@ export const Register = ({ setToken }) => {
           <label className="label">Password</label>
           <div className="field-body">
             <div className="field">
-              <p className="control is-expanded">
+              <p className="control">
                 <input
                   className="input"
                   type="password"
@@ -88,7 +89,7 @@ export const Register = ({ setToken }) => {
             </div>
 
             <div className="field">
-              <p className="control is-expanded">
+              <p className="control">
                 <input
                   className="input"
                   type="password"
@@ -122,14 +123,14 @@ export const Register = ({ setToken }) => {
           </div>
         </div>
 
-        <div className="field is-grouped">
+        <div className="button-field">
           <div className="control">
-            <button className="button is-link" type="submit">
+            <button className="button-submit" type="submit">
               Submit
             </button>
           </div>
           <div className="control">
-            <Link to="/login" className="button is-link is-light">
+            <Link to="/login" className="button-submit">
               Cancel
             </Link>
           </div>

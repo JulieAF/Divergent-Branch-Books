@@ -40,18 +40,17 @@ export const ReviewForm = () => {
     <main className="form-parent">
       <form className="form-and-header">
         <div className="h1-div">
-          <h1>New Review Form</h1>
+          <h1>New Review</h1>
         </div>
         <div className="form-container">
           <fieldset className="form-fieldset">
             <div className="form-field">
-              <label>New Review:</label>
-              <input
+              <textarea
                 className="input-field"
                 id="content"
                 onChange={updateReview}
                 type="text"
-                placeholder="Review here"
+                placeholder="Write review here.."
                 value={review.content}
                 required
               />
@@ -59,7 +58,7 @@ export const ReviewForm = () => {
             {contentError && <p>Please fill out the content field.</p>}
           </fieldset>
           <div className="button-div">
-            <button className="cancel-button" onClick={handleSave}>
+            <button className="submit-button" onClick={handleSave}>
               Submit
             </button>
             <button className="cancel-button" onClick={() => navigate(-1)}>

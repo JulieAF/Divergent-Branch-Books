@@ -30,14 +30,14 @@ export const ReviewList = () => {
           reviews.map((review) => (
             <div className="card-item" key={review.id}>
               <Link to={`/review/${review.id}`}>
-                <div className="review-details">
+                <div className="review-list-details">
                   <div className="review-header">
                     <div className="review-title">{review.book.title}</div>
                     <div className="review-author">
                       {review.alien_user.user.username}
                     </div>
-                    <div className="review-content">{review.content}</div>
                   </div>
+                  <div className="review-content">{review.content}</div>
                 </div>
               </Link>
               {review?.is_owner ? <div></div> : ""}
