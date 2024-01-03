@@ -12,6 +12,7 @@ import { Review } from "../pages/Review";
 import { ReviewForm } from "../components/forms/ReviewForm";
 import { ReviewDetails } from "../pages/ReviewDetails";
 import { EditReviewForm } from "../components/forms/EditReviewForm";
+import { EditProfileForm } from "../components/forms/EditProfileForm";
 
 export const ApplicationViews = ({ token, setToken }) => {
   return (
@@ -57,6 +58,10 @@ export const ApplicationViews = ({ token, setToken }) => {
         <Route
           path="/profile"
           element={<Profile token={token} setToken={setToken} />}
+        />
+        <Route
+          path="/profile/:edit-profile"
+          element={<EditProfileForm token={token} setToken={setToken} />}
         />
       </Routes>
     </>

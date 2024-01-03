@@ -71,7 +71,7 @@ export const EditBookForm = () => {
       <main className="form-parent">
         <form className="form-and-header">
           <div className="h1-div">
-            <h1>Edit Book Form</h1>
+            <h1>Edit Book</h1>
           </div>
           <div className="edit-book-form-container">
             <fieldset className="edit-book-form-fieldset">
