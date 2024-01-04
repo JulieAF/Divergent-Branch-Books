@@ -12,7 +12,6 @@ export const EditProfileForm = () => {
 
   useEffect(() => {
     getCurrentUser().then((data) => {
-      console.log(data);
       setCurrentUser(data);
     });
   }, []);
@@ -46,14 +45,14 @@ export const EditProfileForm = () => {
       <main className="form-parent">
         <form className="form-and-header">
           <div className="h1-div">
-            <h1>Edit Profile {currentUser.user.id}</h1>
+            <h1>Edit Profile</h1>
           </div>
-          <div className="edit-book-form-container">
-            <fieldset className="edit-book-form-fieldset">
-              <div className="edit-book-form-field">
+          <div className="edit-profile-form-container">
+            <fieldset className="edit-profile-form-fieldset">
+              <div className="edit-profile-form-field">
                 <label>Bio:</label>
                 <input
-                  className="edit-book-input-field"
+                  className="edit-profile-input-field"
                   id="bio"
                   onChange={updateCurrentUser}
                   type="text"
@@ -62,10 +61,10 @@ export const EditProfileForm = () => {
                   required
                 />
               </div>
-              <div className="edit-book-form-field">
+              <div className="edit-profile-form-field">
                 <label>Image:</label>
                 <input
-                  className="edit-book-input-field"
+                  className="edit-profile-input-field"
                   id="profile_image_url"
                   onChange={updateCurrentUser}
                   type="text"
