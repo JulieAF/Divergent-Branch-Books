@@ -75,7 +75,24 @@ export const Review = () => {
             return (
               <div className="card-item" key={review.id}>
                 <div className="review-details">
-                  <div>Author: {review.alien_user?.user?.username}</div>
+                  <Link
+                    style={{ textDecoration: "none", color: "aqua" }}
+                    key={review.id}
+                    to={`/review/${review.alien_user?.user.id}`}
+                  >
+                    <div className="review-author-container">
+                      <img
+                        className="author-image"
+                        src={review.alien_user.profile_image_url}
+                        alt="profile image"
+                        width="35px"
+                        height="35px"
+                      />
+                      <div className="review-author">
+                        {review.alien_user.user.username}
+                      </div>
+                    </div>
+                  </Link>
                   <div>{review.created_on}</div>
                 </div>
                 <div className="review-details-body">{review.content}</div>

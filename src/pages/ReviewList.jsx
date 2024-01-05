@@ -53,8 +53,17 @@ export const ReviewList = () => {
               <div className="review-list-details">
                 <div className="review-header">
                   <div className="review-title">{review.book.title}</div>
-                  <div className="review-author">
-                    {review.alien_user.user.username}
+                  <div className="review-author-container">
+                    <img
+                      className="author-image"
+                      src={review.alien_user.profile_image_url}
+                      alt="profile image"
+                      width="35px"
+                      height="35px"
+                    />
+                    <div className="review-author">
+                      {review.alien_user.user.username}
+                    </div>
                   </div>
                 </div>
                 <div className="review-content">{review.content}</div>
