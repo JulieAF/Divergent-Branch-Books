@@ -167,7 +167,6 @@
 .my-review-buttons {
   display: flex;
   justify-content: flex-end;
-  margin-right: 10%;
 }
 
 .edit-button {
@@ -244,4 +243,22 @@
   font-size: 30px;
   display: flex;
   justify-content: center;
+}
+
+.edit-icon {
+  background-color: rgb(241, 67, 209);
+  height: 30px;
+  width: 30px;
+  border: solid black;
+  border-radius: 15%;
+  margin: 0.25%;
+}
+
+.delete-icon {
+  background-color: rgb(241, 67, 209);
+  height: 30px;
+  width: 30px;
+  border: solid black;
+  border-radius: 15%;
+  margin: 0.25%;
 }

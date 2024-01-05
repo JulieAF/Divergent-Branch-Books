@@ -10,7 +10,6 @@ import { BookDetails } from "../pages/BookDetails";
 import { EditBookForm } from "../components/forms/EditBookForm";
 import { Review } from "../pages/Review";
 import { ReviewForm } from "../components/forms/ReviewForm";
-import { ReviewDetails } from "../pages/ReviewDetails";
 import { EditReviewForm } from "../components/forms/EditReviewForm";
 import { EditProfileForm } from "../components/forms/EditProfileForm";
 
@@ -42,10 +41,6 @@ export const ApplicationViews = ({ token, setToken }) => {
         <Route
           path="/create-review/:bookId"
           element={<ReviewForm token={token} setToken={setToken} />}
-        />
-        <Route
-          path="/review/:reviewId"
-          element={<ReviewDetails token={token} setToken={setToken} />}
         />
         <Route
           path="/review/:reviewId/edit-review"
