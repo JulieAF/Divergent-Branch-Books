@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { deleteBook, getBookByBookId } from "../services/bookServices";
+import Delete from "./delete.png";
+import Edit from "./edit.png";
 
 export const BookDetails = () => {
   const { bookId } = useParams();
@@ -48,6 +50,29 @@ export const BookDetails = () => {
                   </div>
                 </div>
               </div>
+              {book?.is_owner ? (
+                <div className="book-details-footer">
+                  <div className="my-review-buttons">
+                    <img
+                      className="edit-icon"
+                      src={Edit}
+                      alt="Edit Icon"
+                      onClick={() => navigate(`/book/${book.id}/edit-book`)}
+                    />
+                    <img
+                      className="delete-icon"
+                      src={Delete}
+                      alt="Delete Icon"
+                      onClick={() => {
+                        handleDelete(book.id);
+                        navigate("/");
+                      }}
+                    />
+                  </div>
+                </div>
+              ) : (
+                ""
+              )}
             </div>
             <div className="book-details-body">{book.content}</div>
             <div className="book-details-footer">
@@ -60,29 +85,6 @@ export const BookDetails = () => {
           <p>No book found.</p>
         )}
       </div>
-      {book?.is_owner ? (
-        <div className="my-review-buttons">
-          <div>
-            <button
-              className="edit-button"
-              onClick={() => navigate(`/book/${book.id}/edit-book`)}
-            >
-              Edit
-            </button>
-            <button
-              className="delete-button"
-              onClick={() => {
-                handleDelete(book.id);
-                navigate("/");
-              }}
-            >
-              Delete
-            </button>
-          </div>
-        </div>
-      ) : (
-        ""
-      )}
       <div className="review-buttons" key={`/book/${bookId}/reviews`}>
         <button
           className="view-review-button"

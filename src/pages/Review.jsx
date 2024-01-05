@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import "./pages.css";
 import { getBookByBookId } from "../services/bookServices";
 import { deleteReview, getAllReviews } from "../services/reviewServices";
+import Delete from "./delete.png";
+import Edit from "./edit.png";
 
 export const Review = () => {
   const { bookId } = useParams();
@@ -79,28 +81,23 @@ export const Review = () => {
                 <div className="review-details-body">{review.content}</div>
                 {review?.is_owner ? (
                   <div className="my-review-buttons">
-                    <button
-                      className="edit-button"
+                    <img
+                      className="edit-icon"
+                      src={Edit}
+                      alt="Edit Icon"
                       onClick={() =>
                         navigate(`/review/${review.id}/edit-review`)
                       }
-                    >
-                      Edit
-                    </button>
-                    <button
-                      className="delete-button"
+                    />
+                    <img
+                      className="delete-icon"
+                      src={Delete}
+                      alt="Delete Icon"
                       onClick={() => {
                         handleDelete(review.id);
                         navigate(`/`);
                       }}
-                    >
-                     <img
-            className="navbar-logo"
-            src={Logo}
-            height="3rem"
-            alt="Divergent Logo"
-          />
-                    </button>
+                    />
                   </div>
                 ) : (
                   ""

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getCurrentUser } from "../services/userServices";
 import { useNavigate } from "react-router-dom";
+import Edit from "./edit.png";
 
 export const Profile = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -28,14 +29,14 @@ export const Profile = () => {
           </div>
           <div className="profile-bio">{currentUser.bio}</div>
         </div>
-      </div>
-      <div className="my-profile-button">
-        <button
-          className="edit-button"
-          onClick={() => navigate(`/profile/edit-profile`)}
-        >
-          Edit
-        </button>
+        <div className="my-profile-button">
+          <img
+            className="edit-icon"
+            src={Edit}
+            alt="Edit Icon"
+            onClick={() => navigate(`/profile/edit-profile`)}
+          />
+        </div>
       </div>
     </>
   );
