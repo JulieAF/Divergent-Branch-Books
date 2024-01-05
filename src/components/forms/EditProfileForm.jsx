@@ -29,13 +29,13 @@ export const EditProfileForm = () => {
   const handleSave = (event) => {
     event.preventDefault();
 
-    const updatedItem = {
+    const updatedUser = {
       id: currentUser.user.id,
       profile_image_url: currentUser.profile_image_url,
       bio: currentUser.bio,
     };
 
-    editCurrentUser(updatedItem).then(() => {
+    editCurrentUser(updatedUser).then(() => {
       navigate(`/profile`);
     });
   };
