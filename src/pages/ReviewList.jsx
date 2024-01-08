@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { deleteReview, getAllReviews } from "../services/reviewServices";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Delete from "./delete.png";
 import Edit from "./edit.png";
 
@@ -53,9 +53,28 @@ export const ReviewList = () => {
               <div className="review-list-details">
                 <div className="review-header">
                   <div className="review-title">{review.book.title}</div>
-                  <div className="review-author">
-                    {review.alien_user.user.username}
-                  </div>
+                  <Link
+                    style={{
+                      textDecoration: "none",
+                      color: "aqua",
+                      background: "transparent",
+                    }}
+                    key={review.id}
+                    to={`/review/${review.alien_user?.user.id}`}
+                  >
+                    <div className="review-author-container">
+                      <img
+                        className="author-image"
+                        src={review.alien_user.profile_image_url}
+                        alt="profile image"
+                        width="35px"
+                        height="35px"
+                      />
+                      <div className="review-author">
+                        {review.alien_user.user.username}
+                      </div>
+                    </div>
+                  </Link>
                 </div>
                 <div className="review-content">{review.content}</div>
               </div>
