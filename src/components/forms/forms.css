@@ -23,6 +23,23 @@
   border-radius: 10px;
   box-shadow: 0px 0px 5px rgb(255, 255, 255);
   padding: 10px;
+  height: 500px;
+}
+
+.edit-book-form-fieldset {
+  margin: 20px 10px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgb(255, 255, 255);
+  padding: 10px;
+}
+
+.edit-profile-form-fieldset {
+  margin: 20px 10px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgb(255, 255, 255);
+  padding: 10px;
   height: 600px;
 }
 
@@ -38,11 +55,12 @@
   padding: 5px;
   display: flex;
   flex-direction: column;
+  margin-left: 7%;
 }
 
 .input-field {
   width: 90%;
-  height: 550px;
+  height: 450px;
   border-radius: 5px;
   padding: 10px;
   background-color: aliceblue;
@@ -61,12 +79,12 @@
   border: none;
   margin: 10px;
   padding: 5px;
+  margin-left: 7%;
 }
 
 .button-div {
   display: flex;
   justify-content: center;
-  margin: 130px;
 }
 
 .submit-button {

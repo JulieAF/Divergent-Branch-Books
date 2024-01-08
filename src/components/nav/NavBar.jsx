@@ -24,13 +24,31 @@ export const NavBar = ({ token, setToken }) => {
         <div className="navbar-start">
           {token ? (
             <>
-              <Link to="/" className="navbar-item">
+              <Link
+                style={{
+                  background: "transparent",
+                }}
+                to="/"
+                className="navbar-item"
+              >
                 Books
               </Link>
-              <Link to="/reviews" className="navbar-item">
+              <Link
+                style={{
+                  background: "transparent",
+                }}
+                to="/reviews"
+                className="navbar-item"
+              >
                 Reviews
               </Link>
-              <Link to="/profile" className="navbar-item">
+              <Link
+                style={{
+                  background: "transparent",
+                }}
+                to="/profile"
+                className="navbar-item"
+              >
                 Profile
               </Link>
             </>

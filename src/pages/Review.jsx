@@ -58,7 +58,6 @@ export const Review = () => {
           className="back"
           style={{
             textDecoration: "none",
-            color: "aqua",
           }}
           book={book}
           key={book.id}
