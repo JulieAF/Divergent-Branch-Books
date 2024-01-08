@@ -76,7 +76,11 @@ export const Review = () => {
               <div className="card-item" key={review.id}>
                 <div className="review-details">
                   <Link
-                    style={{ textDecoration: "none", color: "aqua" }}
+                    style={{
+                      textDecoration: "none",
+                      color: "aqua",
+                      background: "transparent",
+                    }}
                     key={review.id}
                     to={`/review/${review.alien_user?.user.id}`}
                   >

@@ -1,5 +1,5 @@
 export const getUserById = (userId) => {
-  return fetch(`http://localhost:8000/alien_users/${userId}`, {
+  return fetch(`http://localhost:8000/alien_users/user/${userId}`, {
     method: "GET",
     headers: {
       Authorization: `Token ${localStorage.getItem("auth_token")}`,

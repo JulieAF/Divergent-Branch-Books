@@ -221,7 +221,6 @@ export const BookForm = () => {
                 maxLength={1000}
               />
               {contentError && <p>Please fill out the content field.</p>}
-              Max Characters 1000
             </div>
           </fieldset>
         </div>
