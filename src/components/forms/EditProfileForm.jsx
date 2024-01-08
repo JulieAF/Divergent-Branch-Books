@@ -47,29 +47,29 @@ export const EditProfileForm = () => {
           <div className="h1-div">
             <h1>Edit Profile</h1>
           </div>
-          <div className="edit-profile-form-container">
+          <div className="form-container">
             <fieldset className="edit-profile-form-fieldset">
-              <div className="edit-profile-form-field">
-                <label>Bio:</label>
-                <input
-                  className="edit-profile-input-field"
-                  id="bio"
-                  onChange={updateCurrentUser}
-                  type="text"
-                  placeholder=""
-                  value={currentUser.bio}
-                  required
-                />
-              </div>
-              <div className="edit-profile-form-field">
+              <div className="edit-book-form-field">
                 <label>Image:</label>
                 <input
-                  className="edit-profile-input-field"
+                  className="edit-book-input-field"
                   id="profile_image_url"
                   onChange={updateCurrentUser}
                   type="text"
                   placeholder=""
                   value={currentUser.profile_image_url}
+                  required
+                />
+              </div>
+
+              <div className="edit-book-form-field">
+                <textarea
+                  className="input-field"
+                  id="bio"
+                  onChange={updateCurrentUser}
+                  type="text"
+                  placeholder=""
+                  value={currentUser.bio}
                   required
                 />
               </div>

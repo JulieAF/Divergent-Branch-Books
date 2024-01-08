@@ -1,7 +1,5 @@
 .font-link {
   font-family: "Handjet", sans-serif;
-  font-family: "Pixelify Sans", sans-serif;
-  font-family: "Rajdhani", sans-serif;
 }
 
 .title {
@@ -58,6 +56,7 @@
   border-radius: 0.25rem;
   width: 200px;
   color: rgb(255, 255, 255);
+  background: rgb(153, 100, 170);
 }
 
 .review-card-item {
@@ -230,7 +229,7 @@
 }
 
 .back-text {
-  background-color: fuchsia;
+  background-color: rgb(220, 66, 192);
   padding: 10px 12px;
   border-radius: 5px;
   box-shadow: 1px 1px 3px rgb(176, 145, 244);
@@ -258,7 +257,7 @@
 }
 
 .edit-icon {
-  background-color: rgb(241, 67, 209);
+  background-color: rgb(246, 118, 223);
   height: 30px;
   width: 30px;
   border: solid black;
@@ -267,7 +266,7 @@
 }
 
 .delete-icon {
-  background-color: rgb(241, 67, 209);
+  background-color: rgb(246, 118, 223);
   height: 30px;
   width: 30px;
   border: solid black;
